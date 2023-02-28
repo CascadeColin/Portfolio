@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 // set screen size options with react-responsive
 import MediaQuery, { useMediaQuery } from "react-responsive";
-import "./header.css";
 import menuImg from "../img/light-hamburger.png";
 import portrait from "../img/menuImg.png";
 
@@ -83,7 +82,8 @@ export default function Header({ menuList }) {
       {/* if screen size is 640px or more */}
       <MediaQuery minWidth={640}>
         <div className="bg-blue-500 h-16">
-          <h1 className="text-white">Colin Marshall</h1>
+          <h1 className="text-white absolute font-medium left-3 top-3 text-3xl">Colin Marshall</h1>
+          <button>Home</button>
           <button>About Me</button>
           <button>Portfolio</button>
           <button>Contact</button>

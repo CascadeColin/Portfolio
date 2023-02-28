@@ -1,5 +1,4 @@
 import React from "react";
-import "./footer.css";
 
 /* TODO:
 1) refine spacing between icons (more responsive)

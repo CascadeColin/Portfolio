@@ -1,7 +1,6 @@
 import Header from "./header/header";
 import Main from "./main/main";
 import Footer from "./footer/footer";
-import "./app.css";
 import { footerLinks } from "./helpers/footerLinks";
 import {menuList} from "./helpers/menuList"
 
