@@ -1,8 +1,8 @@
 import React from "react";
 
 /* TODO:
-1) make footer sticky so it is always available to recruiter
-2) refine spacing between icons (more responsive)
+1) refine spacing between icons (more responsive)
+2) refine for different screen sizes
 */
 
 // NOTE:  I intentionally am keeping the footer sticky for ease of access to the links inside of it.  Recruiters and hiring managers spend VERY little time on our portfolios and I want those links to be right in their face and easy to click at all times.
@@ -12,8 +12,7 @@ export default function header({ footerLinks }) {
   const year = new Date().getFullYear();
 
   return (
-    // Update "margin bottom" for App component if "height" value is changed here - prevents sticky footer covering content
-    <footer className="flex-col bg-gray-500">
+    <footer className="flex-col bg-gray-500 mt-auto">
       <h1 className="flex justify-center">Made with ❤️ by Colin Marshall</h1>
       <h1 className="flex justify-center">
       © {year} All Rights Reserved

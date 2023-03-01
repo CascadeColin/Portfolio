@@ -66,7 +66,7 @@ export default function Main({ menuList }) {
   return (
     // "fixed top-0 w-full" makes the header sticky to top of page.
     // if header height is changed, change component "margin top" by the same amount.  for example, "h-24" for header means "mt-24" is needed for each subcomponent
-    <div className="app flex flex-col h-full">
+    <div className="app flex flex-col h-full min-h-screen">
       {/* if screen size is 639px or less */}
       <MediaQuery maxWidth={639}>
         <header className="bg-blue-500 flex justify-between pb-10">
