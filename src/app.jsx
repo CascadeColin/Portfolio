@@ -13,7 +13,8 @@ import { menuList } from "./helpers/menuList";
 
 export default function App() {
   return (
-    <div className="app">
+    // "min-h-screen flex flex-col" required to set up sticky footer
+    <div className="app min-h-screen flex flex-col">
       <Main menuList={menuList} />
       <Footer footerLinks={footerLinks} />
     </div>
