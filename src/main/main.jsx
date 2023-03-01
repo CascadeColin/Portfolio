@@ -13,7 +13,7 @@ import { footerLinks } from "../helpers/footerLinks";
 1) make buttons clickable
 3) change font
 3) finishing touches
-4) refactor
+4) refactor (split MediaQuery into different components?  Use one component with a ternary switch for the menu?)
 */
 
 export default function Main({ menuList }) {
