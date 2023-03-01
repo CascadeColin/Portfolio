@@ -1,19 +1,20 @@
-import Header from "./header/header";
-import Main from "./main/main";
+import Main from "./main/navigation";
 import Footer from "./footer/footer";
 import { footerLinks } from "./helpers/footerLinks";
-import {menuList} from "./helpers/menuList"
+import { menuList } from "./helpers/menuList";
 
 /* TODO:
-1) Main
-2) refactor Header to pass props
+
 */
+
+// thoughts:  main needs to be a subcomponent of header?
+// header will always stay the same but interacting with it will change the view for main
+// therefore it should be a subcomponent
 
 export default function App() {
   return (
     <div className="app">
-      <Header menuList={menuList} />
-      <Main />
+      <Main menuList={menuList} />
       <Footer footerLinks={footerLinks} />
     </div>
   );

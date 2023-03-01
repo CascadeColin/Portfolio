@@ -2,16 +2,13 @@ import { addKeyValues } from "./addKeyValue";
 
 const menuNames = [
   {
-    name: "Home",
-  },
-  {
-    name: "About me",
+    name: "About",
   },
   {
     name: "Portfolio",
   },
   {
-    name: "Contact me",
+    name: "Contact",
   },
   {
     name: "Resume",
