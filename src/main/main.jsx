@@ -6,6 +6,8 @@ import About from "./pages/aboutMe";
 import Portfolio from "./pages/portfolio";
 import Resume from "./pages/resume";
 import Contact from "./pages/contact";
+import Footer from "./footer/footer";
+import { footerLinks } from "../helpers/footerLinks";
 
 /* TODO:
 1) make buttons clickable
@@ -64,10 +66,10 @@ export default function Main({ menuList }) {
   return (
     // "fixed top-0 w-full" makes the header sticky to top of page.
     // if header height is changed, change component "margin top" by the same amount.  for example, "h-24" for header means "mt-24" is needed for each subcomponent
-    <div>
+    <div className="app min-h-screen mb-32 flex flex-col">
       {/* if screen size is 639px or less */}
       <MediaQuery maxWidth={639}>
-        <div className="bg-blue-500 h-24 flex justify-between fixed top-0 w-full">
+        <header className="bg-blue-500 h-24 flex justify-between fixed top-0 w-full">
           <h3 className="absolute top-5 left-5 text-3xl font-medium leading-7">
             Colin Marshall
             <br />
@@ -105,8 +107,9 @@ export default function Main({ menuList }) {
               </ul>
             </div>
           </div>
-        </div>
+        </header>
         {renderTab()}
+        <Footer footerLinks={footerLinks} />
       </MediaQuery>
       {/* if screen size is 640px or more */}
       <MediaQuery minWidth={640}>
@@ -136,6 +139,7 @@ export default function Main({ menuList }) {
           </div>
         </div>
         {renderTab()}
+        <Footer footerLinks={footerLinks} />
       </MediaQuery>
     </div>
   );

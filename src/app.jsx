@@ -1,6 +1,5 @@
-import Main from "./main/navigation";
-import Footer from "./footer/footer";
-import { footerLinks } from "./helpers/footerLinks";
+import Main from "./main/main";
+
 import { menuList } from "./helpers/menuList";
 
 /* TODO:
@@ -15,9 +14,9 @@ export default function App() {
   return (
     // "min-h-screen flex flex-col" required to set up sticky footer
     // "mb-32 required to prevent footer from covering content (assuming h-32 for footer)"
-    <div className="app min-h-screen mb-32 flex flex-col">
+    <div className="parent-component">
       <Main menuList={menuList} />
-      <Footer footerLinks={footerLinks} />
+      
     </div>
   );
 }
