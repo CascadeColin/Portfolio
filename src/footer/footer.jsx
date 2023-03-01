@@ -12,14 +12,14 @@ export default function header({ footerLinks }) {
   const year = new Date().getFullYear();
 
   return (
-    // "mt-auto" required for making footer sticky
-    <div className="flex-col bg-gray-500 mt-auto">
+    // Update "margin bottom" for App component if "height" value is changed here - prevents sticky footer covering content
+    <footer className="flex-col bg-gray-500 fixed bottom-0 w-full h-32">
       <h1 className="flex justify-center">Made with ❤️ by Colin Marshall</h1>
       <h1 className="flex justify-center">
       © {year} All Rights Reserved
       </h1>
         <h1 className="flex justify-center">Find me on these platforms:</h1>
-      <footer className="flex justify-center">
+      <div className="flex justify-center">
         {footerLinks.map((item) => {
           return (
             <a href={item.href} key={item.id}>
@@ -27,7 +27,7 @@ export default function header({ footerLinks }) {
             </a>
           );
         })}
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 }

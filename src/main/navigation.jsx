@@ -62,10 +62,12 @@ export default function Main({ menuList }) {
   });
 
   return (
+    // "fixed top-0 w-full" makes the header sticky to top of page.
+    // if header height is changed, change component "margin top" by the same amount.  for example, "h-24" for header means "mt-24" is needed for each subcomponent
     <div>
       {/* if screen size is 639px or less */}
       <MediaQuery maxWidth={639}>
-        <div className="bg-blue-500 h-24 flex justify-between">
+        <div className="bg-blue-500 h-24 flex justify-between fixed top-0 w-full">
           <h3 className="absolute top-5 left-5 text-3xl font-medium leading-7">
             Colin Marshall
             <br />
@@ -94,7 +96,11 @@ export default function Main({ menuList }) {
             >
               <ul>
                 {menuList.map((item) => {
-                  return <li key={item.id} onClick={() => pageHandler(item.name)}>{item.name}</li>;
+                  return (
+                    <li key={item.id} onClick={() => pageHandler(item.name)}>
+                      {item.name}
+                    </li>
+                  );
                 })}
               </ul>
             </div>
@@ -104,21 +110,27 @@ export default function Main({ menuList }) {
       </MediaQuery>
       {/* if screen size is 640px or more */}
       <MediaQuery minWidth={640}>
-        <div className="bg-blue-500 h-16 flex justify-between items-center">
-          <h1 className="text-white pl-5 font-medium text-3xl">
+        <div className="bg-blue-500 h-24 flex justify-end items-center fixed top-0 w-full">
+          <h3 className="absolute top-5 left-5 text-3xl font-medium leading-7">
             Colin Marshall
-          </h1>
+            <br />
+            <span className="text-2xl font-medium">Web Developer</span>
+          </h3>
           <div className="text-white">
-            <button className="px-3">
-              <a href="#about" onClick={() => pageHandler('About')}>About Me</a>
+            <button className="pr-3">
+              <a href="#about" onClick={() => pageHandler("About")}>
+                About Me
+              </a>
             </button>
             <button className="px-3">
-              <a href="#portfolio" onClick={() => pageHandler('Portfolio')}>Portfolio</a>
+              <a href="#portfolio" onClick={() => pageHandler("Portfolio")}>
+                Portfolio
+              </a>
             </button>
-            <button className="px-3" onClick={() => pageHandler('Contact')}>
+            <button className="px-3" onClick={() => pageHandler("Contact")}>
               <a href="#contact">Contact</a>
             </button>
-            <button className="px-3" onClick={() => pageHandler('Resume')}>
+            <button className="px-3" onClick={() => pageHandler("Resume")}>
               <a href="#resume">Resume</a>
             </button>
           </div>
