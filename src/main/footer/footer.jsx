@@ -13,7 +13,7 @@ export default function header({ footerLinks }) {
 
   return (
     // Update "margin bottom" for App component if "height" value is changed here - prevents sticky footer covering content
-    <footer className="flex-col bg-gray-500 fixed bottom-0 w-full h-32">
+    <footer className="flex-col bg-gray-500">
       <h1 className="flex justify-center">Made with ❤️ by Colin Marshall</h1>
       <h1 className="flex justify-center">
       © {year} All Rights Reserved

@@ -14,7 +14,7 @@ export default function App() {
   return (
     // "min-h-screen flex flex-col" required to set up sticky footer
     // "mb-32 required to prevent footer from covering content (assuming h-32 for footer)"
-    <div className="parent-component">
+    <div className="parent-component" style={{height:"100%",margin:0}}>
       <Main menuList={menuList} />
       
     </div>
