@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { validateEmail } from "../../helpers/helpers";
 
 /* TODO:
 1) set state to render error messages
@@ -9,6 +10,54 @@ import React from "react";
 */
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+
+  function handleInputChange(e) {
+    const { target } = e;
+    const type = target.name;
+    const value = target.value;
+
+    if (type === "name") {
+      setName(value);
+    } else if (type === "email") {
+      setEmail(value);
+    } /* message */ else {
+      setMessage(value);
+    }
+    return;
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address!");
+      return;
+    }
+    if (!name && !message) {
+      setError("Please leave a name and message!");
+      return;
+    }
+    if (!name) {
+      setError("Please enter your name!")
+      return
+    }
+    if (!message) {
+      setError("Please leave a message!")
+      return
+    }
+    setName("");
+    setEmail("");
+    setMessage("");
+
+    // removes the error message if user fills out the form correctly
+    setError("Thank you for your message!  I will respond within 72 hours.");
+    return;
+  }
+
   return (
     // "mt-24" prevents content being covered by sticky header.  If this is bugged, verify that current "mt" value matched the "h" value in navigation.jsx
     <main className="overflow-auto">
@@ -16,14 +65,42 @@ export default function Contact() {
       {/* render error message if user clicks outside form without inputting all fields */}
       <form action="send-to-nodemailer" className="flex flex-col w-1/4 mx-auto">
         <label className="my-2">Name:</label>
-        <input className="bg-stone-500 rounded-lg  p-2" type="text" />
+        <input
+          className="bg-stone-500 rounded-lg p-2"
+          type="text"
+          value={name}
+          name="name"
+          placeholder="Enter your name..."
+          onChange={handleInputChange}
+        />
         <label className="my-2">Email:</label>
         {/* refactor to use custom error handling */}
-        <input className="bg-stone-500 rounded-lg  p-2" type="email" />
+        <input
+          className="bg-stone-500 rounded-lg  p-2"
+          type="email"
+          value={email}
+          name="email"
+          placeholder="Enter your email..."
+          onChange={handleInputChange}
+        />
         <label className="my-2">Message:</label>
-        <textarea className="bg-stone-500 rounded-lg h-56 p-2" type="text" />
-        <button type="submit" className="bg-stone-600 hover:bg-stone-500 rounded-full w-24 h-12 mt-3">Submit</button>
+        <textarea
+          className="bg-stone-500 rounded-lg h-56 p-2"
+          type="text"
+          value={message}
+          name="message"
+          placeholder="Leave me a message!"
+          onChange={handleInputChange}
+        />
+        <button
+          type="submit"
+          className="bg-stone-600 hover:bg-stone-500 rounded-full w-24 h-12 mt-3"
+          onClick={handleFormSubmit}
+        >
+          Submit
+        </button>
       </form>
+      {error && <p className="text-center text-red-500 ">{error}</p>}
     </main>
   );
 }
