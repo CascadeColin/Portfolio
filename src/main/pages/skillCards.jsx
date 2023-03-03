@@ -8,7 +8,7 @@ export default function SkillCards() {
       {data.map((obj) => {
         return (
           <li
-            className="flex-skill-icon border border-black rounded-xl border-solid m-5"
+            className="flex-skill-icon m-5"
             key={obj.id}
           >
             <h1 className="font-bold p-2 text-center">{obj.name}</h1>

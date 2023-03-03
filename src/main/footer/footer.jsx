@@ -12,13 +12,13 @@ export default function header({ footerLinks }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="flex-col bg-gray-500 mt-auto">
-      <h1 className="flex justify-center">Made with ❤️ by Colin Marshall</h1>
+    <footer className="flex-col bg-stone-600 mt-auto">
+      <h1 className="flex justify-center mt-2">Made with ❤️ by Colin Marshall</h1>
       <h1 className="flex justify-center">
       © {year} All Rights Reserved
       </h1>
         <h1 className="flex justify-center">Find me on these platforms:</h1>
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-2">
         {footerLinks.map((item) => {
           return (
             <a href={item.href} key={item.id}>

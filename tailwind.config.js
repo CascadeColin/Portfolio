@@ -2,6 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    
     // breakpoints for switching from mobile to tablet to PC
     screens: {
       // => @media (min-width: 640px and max-width: 767px) { ... }
@@ -15,7 +16,14 @@ module.exports = {
     },
     // any custom extensions of default styles go here
     extend: {
+      colors: {
+        midnight: {
+          1: '#121062'
+        }
+      },
+
       flex: {
+        // skill icon cards for portfolio
         "skill-icon": "1 0 21%"
       },
     },

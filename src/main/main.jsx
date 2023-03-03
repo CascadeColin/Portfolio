@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 // set screen size options with react-responsive
 import MediaQuery, { useMediaQuery } from "react-responsive";
-import hamburgerIcon from "../img/light-hamburger.png";
+import hamburgerIcon from "../img/white-hamburger.png";
 import About from "./pages/aboutMe";
 import Portfolio from "./pages/portfolio";
 import Resume from "./pages/resume";
@@ -69,11 +69,11 @@ export default function Main({ menuList }) {
     <div className="app flex flex-col h-full min-h-screen">
       {/* if screen size is 639px or less */}
       <MediaQuery maxWidth={639}>
-        <header className="bg-blue-500 flex justify-between pb-10">
+        <header className="bg-stone-800 flex justify-between pb-2">
           <h3 className="text-3xl font-medium leading-7">
             Colin Marshall
             <br />
-            <span className="text-2xl font-medium">Web Developer</span>
+            <span className="text-2xl font-medium">Full-Stack Web Developer</span>
           </h3>
           {/* onClick toggles boolean switch */}
           <div className="menu-container" ref={menuRef}>
@@ -90,7 +90,7 @@ export default function Main({ menuList }) {
               />
             </div>
             <div
-              className={`dropdown absolute top-24 right-5 bg-gray-500 pt-2 pr-5 before:content-[''] before:absolute before:-top-1 before:right-5 before:h-5 before:w-5 before:bg-gray-500 before:rotate-45 ${
+              className={`dropdown absolute top-24 right-5 bg-stone-500 pt-2 pr-5 before:content-[''] before:absolute before:-top-1 before:right-5 before:h-5 before:w-5 before:bg-stone-500 before:rotate-45 ${
                 open
                   ? "active opacity-100 visible translate-y-0 duration-500"
                   : "inactive opacity-0 invisible -translate-y-3 duration-500"
@@ -113,27 +113,27 @@ export default function Main({ menuList }) {
       </MediaQuery>
       {/* if screen size is 640px or more */}
       <MediaQuery minWidth={640}>
-        <header className="bg-blue-500 flex justify-between pb-10">
+        <header className="bg-stone-800 flex justify-between m-2">
           <h3 className="text-3xl font-medium leading-7">
             Colin Marshall
             <br />
-            <span className="text-2xl font-medium">Web Developer</span>
+            <span className="text-2xl font-medium">Full-Stack Web Developer</span>
           </h3>
-          <div className="text-white">
-            <button className="pr-3">
+          <div className="text-white mt-2">
+            <button className="hover:text-gray-300 pr-3">
               <a href="#about" onClick={() => pageHandler("About")}>
                 About Me
               </a>
             </button>
-            <button className="px-3">
+            <button className="hover:text-gray-300 px-3">
               <a href="#portfolio" onClick={() => pageHandler("Portfolio")}>
                 Portfolio
               </a>
             </button>
-            <button className="px-3" onClick={() => pageHandler("Contact")}>
+            <button className="hover:text-gray-300 px-3" onClick={() => pageHandler("Contact")}>
               <a href="#contact">Contact</a>
             </button>
-            <button className="px-3" onClick={() => pageHandler("Resume")}>
+            <button className="hover:text-gray-300 px-3" onClick={() => pageHandler("Resume")}>
               <a href="#resume">Resume</a>
             </button>
           </div>
