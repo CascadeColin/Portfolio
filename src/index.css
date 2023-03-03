@@ -2,3 +2,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* custom scrollbar - Chrome */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #292524;
+    margin-block: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #78716c;
+    border-radius: 100vh;
+    border: hidden;
+}
+
+/* custom scrollbar - Firefox */
+
+/* if browser supports this property, use it instead of webkit */
+/* currently, Chrome only supports webkit and Firefox does not. */
+/* scrollbar-color is only for Firefox, therefore @supports acts as an if/else statement for browser support for this feature */
+
+@supports (scrollbar-color: #78716c #292524) {
+    * {
+        scrollbar-color: #78716c #292524;
+        scrollbar-width: thin;
+    }
+}
