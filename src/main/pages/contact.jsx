@@ -63,10 +63,10 @@ export default function Contact() {
     <main className="overflow-auto">
       <h1 className="text-center font-bold text-4xl m-5">Contact Me!</h1>
       {/* render error message if user clicks outside form without inputting all fields */}
-      <form action="send-to-nodemailer" className="flex flex-col w-1/4 mx-auto">
+      <form action="send-to-nodemailer" className="flex flex-col w-1/4 xs:w-3/4 sm:w-2/3 md:w-1/2 lg:w-2/5 xl:1/3 mx-auto">
         <label className="my-2">Name:</label>
         <input
-          className="bg-stone-500 rounded-lg p-2"
+          className="placeholder:text-white placeholder:opacity-75 bg-stone-500 rounded-lg p-2"
           type="text"
           value={name}
           name="name"
@@ -76,7 +76,7 @@ export default function Contact() {
         <label className="my-2">Email:</label>
         {/* refactor to use custom error handling */}
         <input
-          className="bg-stone-500 rounded-lg  p-2"
+          className="placeholder:text-white placeholder:opacity-75 bg-stone-500 rounded-lg  p-2"
           type="email"
           value={email}
           name="email"
@@ -85,7 +85,7 @@ export default function Contact() {
         />
         <label className="my-2">Message:</label>
         <textarea
-          className="bg-stone-500 rounded-lg h-56 p-2"
+          className="placeholder:text-white placeholder:opacity-75 bg-stone-500 rounded-lg h-56 p-2"
           type="text"
           value={message}
           name="message"
