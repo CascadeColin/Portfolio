@@ -73,7 +73,9 @@ export default function Main({ menuList }) {
           <h3 className="text-3xl font-medium leading-7">
             Colin Marshall
             <br />
-            <span className="text-2xl font-medium">Full-Stack Web Developer</span>
+            <span className="text-2xl font-medium">
+              Full-Stack Web Developer
+            </span>
           </h3>
           {/* onClick toggles boolean switch */}
           <div className="menu-container" ref={menuRef}>
@@ -117,23 +119,50 @@ export default function Main({ menuList }) {
           <h3 className="text-3xl font-medium leading-7">
             Colin Marshall
             <br />
-            <span className="text-2xl font-medium">Full-Stack Web Developer</span>
+            <span className="text-2xl font-medium">
+              Full-Stack Web Developer
+            </span>
           </h3>
           <div className="text-white mt-2">
-            <button className="hover:text-gray-300 pr-3">
+            {/* className="hover:text-gray-300 px-3" */}
+            <button
+              className={
+                currentPage === "About"
+                  ? "text-gray-400 px-3"
+                  : "hover:text-gray-300 px-3"
+              }
+            >
               <a href="#about" onClick={() => pageHandler("About")}>
                 About Me
               </a>
             </button>
-            <button className="hover:text-gray-300 px-3">
+            <button className={
+                currentPage === "Portfolio"
+                  ? "text-gray-400 px-3"
+                  : "hover:text-gray-300 px-3"
+              }>
               <a href="#portfolio" onClick={() => pageHandler("Portfolio")}>
                 Portfolio
               </a>
             </button>
-            <button className="hover:text-gray-300 px-3" onClick={() => pageHandler("Contact")}>
+            <button
+              className={
+                currentPage === "Contact"
+                  ? "text-gray-400 px-3"
+                  : "hover:text-gray-300 px-3"
+              }
+              onClick={() => pageHandler("Contact")}
+            >
               <a href="#contact">Contact</a>
             </button>
-            <button className="hover:text-gray-300 px-3" onClick={() => pageHandler("Resume")}>
+            <button
+              className={
+                currentPage === "Resume"
+                  ? "text-gray-400 px-3"
+                  : "hover:text-gray-300 px-3"
+              }
+              onClick={() => pageHandler("Resume")}
+            >
               <a href="#resume">Resume</a>
             </button>
           </div>
